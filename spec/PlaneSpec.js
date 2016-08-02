@@ -11,8 +11,9 @@ describe('Plane', function() {
     plane.land(airport);
     expect(airport.clearForLanding).toHaveBeenCalledWith(plane);
   });
-  // it("should depart from the Airport", function() {
-  //   plane.land();
-  //   expect(plane.depart).not.toBeUndefined()
-  // });
+  it("should depart from the Airport", function() {
+    plane.land(airport);
+    plane.depart(airport);
+    expect(airport.clearForDeparture).toHaveBeenCalled();
+  });
 });

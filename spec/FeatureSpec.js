@@ -13,9 +13,9 @@ describe('Feature Test:', function() {
     plane.land(airport);
     expect(airport.planes()).toContain(plane);
   });
-  // it("should depart from the Airport", function() {
-  //   plane.land();
-  //   plane.depart();
-  //   expect(plane.isLanded).toBeFalsy();
-  // });
+  it("should depart from the Airport", function() {
+    plane.land(airport);
+    plane.depart(airport);
+    expect(airport.planes()).not.toContain(plane);
+  });
 });
